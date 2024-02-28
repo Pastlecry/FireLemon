@@ -1,9 +1,7 @@
 # FireLemon
 
 <p align='center'>
- <a href="https://github.com/sponsors/alexandresanlim">
-    <img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" />        
-  </a>&nbsp;&nbsp;
+ <a
   <a href="#">
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Pastlecry/FireLemon-README.md-Profile?style=for-the-badge">
 </a>&nbsp;&nbsp;
