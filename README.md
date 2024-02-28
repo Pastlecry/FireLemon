@@ -6,7 +6,7 @@
 <p align='center'>
  <a
   <a href="#">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Pastlecry/FireLemon-README.md-Profile?style=for-the-badge">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Pastlecry/FireLemon/README.md-Profile?style=for-the-badge">
 </a>&nbsp;&nbsp;
 </p>
 
