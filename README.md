@@ -53,12 +53,9 @@ Lemonade Tool v2.0.0
 # Anonymize Attacks
 Coming soon!
 
-#
+# Terms of use and Responsiblities
 
 > [!WARNING]
-> This repositpry's Author is not resposible for what you're about to do with this script.
-
-> [!WARNING]
-> This script made for Educational purposes only!
+> This repositpry's Author is not resposible for what you're about to do with this script, This script made for Educational purposes only!
 # License
 all files are Licensed under [MIT](/LICENSE) License 
