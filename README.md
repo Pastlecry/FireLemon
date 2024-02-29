@@ -17,6 +17,12 @@ FireLemon is an advanced ddos tool powered by python's most powerful frameworks 
 <p align="center">
   <img src="image1.png" alt="FireLemon Logo">
 </p>
+This DDoS Script supports:
+```
+Layer 3
+Layer 4
+Layer 6
+```
 Copyright 2024 Pastlecry 
 
 Lemonade Tool v2.0.0
