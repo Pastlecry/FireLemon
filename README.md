@@ -8,18 +8,15 @@
 
 <br/>
 <p align="center">
-  <h3 align="center">![_836d4f2d-ff02-4463-a124-cacf9a5b00f1fvbrewvew](https://github.com/Pastlecry/FireLemon/assets/93829550/835fa1d1-012d-41d6-bcc5-415efc334a24)FireLemon</h3>
+  <h3 align="center">FireLemon</h3>
 
   <p align="center">
     A Programming Language to make API's !!
     <br/>
     <br/>
-    <a href="https://github.com/merwin-asm/april/blob/main/docs.md"><strong>Explore the docs »</strong></a>
+    <a><strong>Advanced DDoS Attack Tool</strong></a>
     <br/>
     <br/>
-    <a href="https://github.com/merwin-asm/april/issues">Report Bug</a>
-    .
-    <a href="https://github.com/merwin-asm/april/issues">Request Feature</a>
   </p>
 </p>
 FireLemon is an advanced ddos tool powered by python's most powerful frameworks such as Scapy, requests, socket and socks
