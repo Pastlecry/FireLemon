@@ -2,7 +2,7 @@
 ![Repo stars](https://img.shields.io/github/stars/Pastlecry/FireLemon?style=for-the-badge&color=orange)
 ![Version](https://img.shields.io/github/v/release/Pastlecry/FireLemon?logo=FireLemon&color=yellow)
 
-# FireLemon ![_836d4f2d-ff02-4463-a124-cacf9a5b00f1](https://github.com/Pastlecry/FireLemon/assets/93829550/10aeb737-a0eb-438f-9ba1-6c8819b5ffe9)
+# ![_836d4f2d-ff02-4463-a124-cacf9a5b00f1fvbrewvew](https://github.com/Pastlecry/FireLemon/assets/93829550/835fa1d1-012d-41d6-bcc5-415efc334a24)FireLemon 
 
 ![Screenshot 2024-02-29 033807](https://github.com/Pastlecry/FireLemon/assets/93829550/560290af-de13-4155-89b2-c7fddd988709)
 
