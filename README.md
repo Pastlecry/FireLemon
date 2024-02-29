@@ -49,7 +49,7 @@ after that we change our directory to cloned repository
 ```
 cd FireLemon
 ```
-than we simply run ```main``` python file to run FireLemon
+than we simply run ```main``` Python file to run FireLemon
 ```
 python main.py
 ```
