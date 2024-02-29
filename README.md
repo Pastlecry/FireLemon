@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/github/license/Pastlecry/FireLemon?style=flat-square&color=magenta)(./LICENSE)]
+[![License](https://img.shields.io/github/license/Pastlecry/FireLemon?style=flat-square&color=magenta)(https://github.com/Pastlecry/FireLemon/LICENSE)]
 [![Repo stars](https://img.shields.io/github/stars/Pastlecry/FireLemon?style=flat-square&color=magenta)]
 ![image](https://github.com/Pastlecry/FireLemon/assets/93829550/24980aec-99b4-4ef1-8978-8b66acc07d90)
 
