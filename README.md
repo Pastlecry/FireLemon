@@ -11,12 +11,7 @@
   <h3 align="center">FireLemon</h3>
 
   <p align="center">
-    A Programming Language to make API's !!
-    <br/>
-    <br/>
-    <a><strong>Advanced DDoS Attack Tool</strong></a>
-    <br/>
-    <br/>
+    Advanced DDoS Attack Tool
   </p>
 </p>
 FireLemon is an advanced ddos tool powered by python's most powerful frameworks such as Scapy, requests, socket and socks
