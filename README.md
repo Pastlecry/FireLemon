@@ -42,9 +42,13 @@ This new tool powered by Python's most powerful Frameworks such as:
   
 # installation
 first of all we're gonna clone this repository to our Machine
-```git clone https://github.com/Pastlecry/FireLemon```
+```
+git clone https://github.com/Pastlecry/FireLemon
+```
 after that we change our directory to cloned repository
-```cd FireLemon```
+```
+cd FireLemon
+```
 # Usage
 you can run below commands in program Terminal:
 |  Commands  |                         Usage                           |
