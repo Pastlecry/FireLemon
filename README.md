@@ -37,6 +37,7 @@ This new tool powered by Python's most powerful Frameworks such as:
 + Layer 6
 
 # Usage
+you can run below commands in program Terminal:
 |  Commands  |                         Usage                           |
 |------------|---------------------------------------------------------|
 |options     |Shows available options|
@@ -44,11 +45,6 @@ This new tool powered by Python's most powerful Frameworks such as:
 |attack      |Launchs an attack|
 |debug       |Turning Debig mode ON and OFF(in Beta Stage right now!)|
 |exit        |Exits the program|
-
-
-Copyright 2024 Pastlecry 
-
-Lemonade Tool v2.0.0
 
 # Anonymize Attacks
 Coming soon!
