@@ -61,13 +61,13 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |layer 6     |           |                                          
 |layer 7     |HTTP, FTP, Memcache|   
 
-|  Protocols  |                       Description                       |
-|-------------|---------------------------------------------------------|
-|||
+|  Protocols  |                       Description                       |  Layer |
+|-------------|---------------------------------------------------------|--------|
+||||
 
-|   Attacks   |                       Dscription                        |
-|-------------|---------------------------------------------------------|
-|||
+|   Attacks   |                       Dscription                        |  Layer |
+|-------------|---------------------------------------------------------|--------|
+||||
 
 # Anonymize Attacks
 Coming soon!
