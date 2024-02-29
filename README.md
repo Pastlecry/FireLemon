@@ -72,12 +72,12 @@ you can run below commands in program Terminal:
 
 With running **attack** command in program Terminal you can Select 5 layers of attacks with their own functions:
 
-|   Layers   |                       Protocols                         |
-|------------|---------------------------------------------------------|
-|layer 3     |ARP, BGP, ICMP|                                      
-|layer 4     |TCP, UDP, SMP|                                    
-|layer 5     |            |                                            
-|layer 6     |           |                                          
+|   Layers   |                       Protocols                         | Usage |
+|------------|---------------------------------------------------------|-------|
+|layer 3     |ARP, BGP, ICMP|  |                                    
+|layer 4     |TCP, UDP, SMP|   |                                
+|layer 5     |            |    |                                        
+|layer 6     |           |     |                                     
 |layer 7     |HTTP, FTP, Memcache|   
 
 # Protocols
