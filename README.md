@@ -10,5 +10,8 @@ FireLemon is an advanced ddos tool powered by python's most powerful frameworks 
 Copyright 2024 Pastlecry 
 Lemonade Tool v2.0.0
 
+> [!WARNING]
+> This repositpry's Author is not resposible for what you're about to do with this script.
+> This script made for Educational purposes only!
 # License
 all files are Licensed under MIT License 
