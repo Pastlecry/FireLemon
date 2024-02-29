@@ -7,9 +7,11 @@
     Advanced DDoS Attack Tool
   </p>
 </p>
-[![License](https://img.shields.io/github/license/Pastlecry/FireLemon?style=for-the-badge&color=orange)](/LICENSE)
+
+![License](https://img.shields.io/github/license/Pastlecry/FireLemon?style=for-the-badge&color=orange)](/LICENSE)
 ![Repo stars](https://img.shields.io/github/stars/Pastlecry/FireLemon?style=for-the-badge&color=orange)
 ![Version](https://img.shields.io/github/v/release/Pastlecry/FireLemon?logo=FireLemon&color=yellow)
+
 FireLemon is an advanced ddos tool powered by python's most powerful frameworks such as Scapy, requests, socket and socks
 <br/>
 <p align="center">
