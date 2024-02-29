@@ -1,10 +1,10 @@
 <br/>
 <p align="center">
-  <img src="logo.png" alt="FireLemon Logo">
   <h3 align="center">FireLemon</h3>
 
   <p align="center">
     Advanced DDoS Attack Tool
+    <img src="logo.png" alt="FireLemon Logo">
   </p>
 </p>
 
