@@ -37,7 +37,7 @@ This new tool powered by Python's most powerful Frameworks such as:
 + Layer 6
 
 # Usage
-> you can run below commands in program Terminal:
+you can run below commands in program Terminal:
 |  Commands  |                         Usage                           |
 |------------|---------------------------------------------------------|
 |options     |Shows available options|
@@ -46,7 +46,7 @@ This new tool powered by Python's most powerful Frameworks such as:
 |debug       |Turning Debig mode ON and OFF(in Beta Stage right now!)|
 |exit        |Exits the program|
 
-> With running **attack** command in program Terminal you can Select 5 layers of attacks with their own functions:
+With running **attack** command in program Terminal you can Select 5 layers of attacks with their own functions:
 
 |   Layers   |                       Protocols                         |
 |------------|---------------------------------------------------------|
