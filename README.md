@@ -22,6 +22,7 @@ Lemonade Tool v2.0.0
 
 > [!WARNING]
 > This repositpry's Author is not resposible for what you're about to do with this script.
+
 > [!WARNING]
 > This script made for Educational purposes only!
 # License
