@@ -5,7 +5,7 @@
   <p align="center">
     Advanced DDoS Attack Tool
   </p>
-  <img src="logo.png" alt="FireLemon Logo">
+  <img src="logo.png" alt="FireLemon Logo ">
 </p>
 
 [![License](https://img.shields.io/github/license/Pastlecry/FireLemon?style=for-the-badge&color=orange)](/LICENSE)
@@ -15,7 +15,7 @@
 FireLemon is an Advanced DDoS Tool Powered by Python's most Powerful Frameworks such as Scapy, Requests, Socket and PySocks.
 <br/>
 <p align="center">
-  <img src="image1.png" alt="FireLemon Logo">
+  <img src="image1.png" alt="FireLemon Logo" class="center">
 </p>
 
 This DDoS Script supports:
