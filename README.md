@@ -12,7 +12,7 @@
 
   <p align="center">
     Advanced DDoS Attack Tool
-    <img src="[pic_trulli.jpg](https://github.com/Pastlecry/FireLemon/assets/93829550/835fa1d1-012d-41d6-bcc5-415efc334a24)" alt="Italian Trulli">
+    <img src="logo.png" alt="FireLemon Logo">
   </p>
 </p>
 FireLemon is an advanced ddos tool powered by python's most powerful frameworks such as Scapy, requests, socket and socks
