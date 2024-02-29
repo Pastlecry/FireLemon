@@ -23,6 +23,7 @@ FireLemon is an Advanced DDoS Tool Powered by Python's most Powerful Frameworks 
 </p>
 
 FireLemon is meant to be [Lemonade](https://github.com/Pastlecry/Lemonade-Too) Version 2 but released as a new tool called FireLemon.
+Why it's called FireLemon? Bcause it's FIRE!:fire:
 
 This new tool powered by Python's most powerful Frameworks such as:
 + [Sockets](https://docs.python.org/3/library/socket.html)
