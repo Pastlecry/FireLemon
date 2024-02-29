@@ -50,11 +50,12 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 
 |   Layers   |                       Protocols                         |
 |------------|---------------------------------------------------------|
-|layer 3     |                                                         |
-|layer 4     |                                                         |
-|layer 5     |                                                         |
-|layer 6     |                                                         |
-|layer 7     |                                                         |
+|layer 3     |ARP, BGP, ICMP|                                      
+|layer 4     |TCP, UDP, SMP|                                    
+|layer 5     |            |                                            
+|layer 6     |           |                                          
+|layer 7     |HTTP, FTP, Memcache|                                                
+
 # Anonymize Attacks
 Coming soon!
 
