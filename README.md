@@ -12,7 +12,7 @@
 ![Repo stars](https://img.shields.io/github/stars/Pastlecry/FireLemon?style=for-the-badge&color=orange)
 ![Version](https://img.shields.io/github/v/release/Pastlecry/FireLemon?logo=FireLemon&color=yellow)
 
-FireLemon is an advanced ddos tool powered by python's most powerful frameworks such as Scapy, requests, socket and socks
+FireLemon is an Advanced DDoS Tool Powered by Python's most Powerful Frameworks such as Scapy, Requests, Socket and PySocks.
 <br/>
 <p align="center">
   <img src="image1.png" alt="FireLemon Logo">
