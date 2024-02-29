@@ -8,7 +8,7 @@
   </p>
 </p>
 
-![License](https://img.shields.io/github/license/Pastlecry/FireLemon?style=for-the-badge&color=orange)](/LICENSE)
+[![License](https://img.shields.io/github/license/Pastlecry/FireLemon?style=for-the-badge&color=orange)](/LICENSE)
 ![Repo stars](https://img.shields.io/github/stars/Pastlecry/FireLemon?style=for-the-badge&color=orange)
 ![Version](https://img.shields.io/github/v/release/Pastlecry/FireLemon?logo=FireLemon&color=yellow)
 
