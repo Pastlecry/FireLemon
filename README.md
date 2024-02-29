@@ -29,11 +29,11 @@ FireLemon is an Advanced DDoS Tool Powered by Python's most Powerful Frameworks 
 # Usage
 |  Commands  |                         Usage                           |
 |------------|---------------------------------------------------------|
-|options     |                                                         |
-|attacks     |                                                         |
-|attack      |                                                         |
-|debug       |                                                         |
-|exit        |                                                         |
+|options     |Shows available options|
+|attacks     |Shows all attack methods and protocls|
+|attack      |Launchs an attack|
+|debug       |Turning Debig mode ON and OFF(in Beta Stage right now!)|
+|exit        |Exits the program|
 
 
 Copyright 2024 Pastlecry 
