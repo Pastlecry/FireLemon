@@ -63,7 +63,14 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 
 |  Protocols  |                       Description                       |  Layer |
 |-------------|---------------------------------------------------------|--------|
-||||
+|ARP| |Layer 3|
+|BGP| |Layer 3|
+|ICMP| | Layer 3|
+|TCP| | Layer 4|
+|UDP| | Layer 4|
+|SMP| | Layer 4|
+|HTTP| | Layer 7|
+|FTP| | Layer 7|
 
 |   Attacks   |                       Dscription                        |  Layer |
 |-------------|---------------------------------------------------------|--------|
