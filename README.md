@@ -68,6 +68,8 @@ you can run below commands in program Terminal:
 |debug       |Turning Debig mode ON and OFF(in Beta Stage right now!)|
 |exit        |Exits the program|
 
+# Layers
+
 With running **attack** command in program Terminal you can Select 5 layers of attacks with their own functions:
 
 |   Layers   |                       Protocols                         |
@@ -77,6 +79,8 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |layer 5     |            |                                            
 |layer 6     |           |                                          
 |layer 7     |HTTP, FTP, Memcache|   
+
+# Protocols
 
 |  Protocols  |                       Description                       |  Layer |
 |-------------|---------------------------------------------------------|--------|
@@ -88,6 +92,8 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |SMP| | Layer 4|
 |HTTP| | Layer 7|
 |FTP| | Layer 7|
+
+# Attack
 
 |   Attacks   |                       Dscription                        |  Layer |
 |-------------|---------------------------------------------------------|--------|
