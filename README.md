@@ -4,8 +4,8 @@
 
   <p align="center">
     Advanced DDoS Attack Tool
-    <img src="logo.png" alt="FireLemon Logo">
   </p>
+  <img src="logo.png" alt="FireLemon Logo">
 </p>
 
 [![License](https://img.shields.io/github/license/Pastlecry/FireLemon?style=for-the-badge&color=orange)](/LICENSE)
