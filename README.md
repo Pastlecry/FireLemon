@@ -102,7 +102,7 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 Coming soon!
 
 # Terms of use and Responsiblities
-## Remeber with Great Power, Comes great Responsibility!
+### Remeber with Great Power, Comes great Responsibility!
 > [!WARNING]
 > This repositpry's Author is not resposible for what you're about to do with this script, This script made for Educational purposes only!
 # License
