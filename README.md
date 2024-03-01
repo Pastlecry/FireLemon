@@ -103,6 +103,11 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |UDP flood||Layer 4|
 |TCP flood||Layer 4|
 |BGP flood||Layer 4|
+|Minecraft||Layer 4|
+|Reflection||Layer 5|
+|HTTP flood||Layer 6|
+|Cookie stuffing||Layer 6|
+|Memcache||Layer 6|
 
 # Lemonsqueezy
 new ddos attack method!
