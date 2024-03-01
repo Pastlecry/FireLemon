@@ -96,7 +96,13 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 
 |   Attacks   |                       Dscription                        |  Layer |
 |-------------|---------------------------------------------------------|--------|
-||||
+|IP flood||Layer 3|
+|LemonSqueezy||Layer 3|
+|Ping of death/ICMP||Layer 3|
+|SYN Flood||Layer 4|
+|UDP flood||Layer 4|
+|TCP flood||Layer 4|
+|BGP flood||Layer 4|
 
 # Lemonsqueezy
 new ddos attack method!
