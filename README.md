@@ -92,7 +92,7 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |HTTP| | Layer 7|
 |FTP| | Layer 7|
 
-# Attack
+# Attack Methods
 
 |   Attacks   |                       Dscription                        |  Layer |
 |-------------|---------------------------------------------------------|--------|
