@@ -77,7 +77,7 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |layer 4     |TCP, UDP, SMP|   |                                
 |layer 5     |            |    |                                         
 
-|layer 7     |HTTP, FTP, Memcache|   
+|layer 7     |HTTP, FTP, Memcache| |   
 
 # Protocols
 
@@ -97,6 +97,9 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |   Attacks   |                       Dscription                        |  Layer |
 |-------------|---------------------------------------------------------|--------|
 ||||
+
+# Lemonsqueezh
+new ddos attack method!
 
 # Anonymize Attacks
 Coming soon!
