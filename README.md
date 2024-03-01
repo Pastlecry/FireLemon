@@ -116,7 +116,7 @@ new ddos attack method!
 Coming soon!
 
 # Terms of use and Responsiblities
-1. Remeber with Great Power, Comes great Responsibility.
+1. Remember with Great Power, Comes great Responsibility.
 
 2. Don not attampt to attack Education, medical, Government websites and Infrastructure communications.
 3. please do not copy this product without mentioning the creator
