@@ -64,7 +64,7 @@ you can run below commands in program Terminal:
 |options     |Shows available options|
 |attacks     |Shows all attack methods and protocls|
 |attack      |Launchs an attack|
-|debug       |Turning Debig mode ON and OFF(in Beta Stage right now!)|
+|debug       |Turning Debug mode ON and OFF(in Beta Stage right now!)|
 |exit        |Exits the program|
 
 # Layers
