@@ -105,9 +105,9 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |BGP flood||Layer 4|
 |Minecraft||Layer 4|
 |Reflection||Layer 5|
-|HTTP flood||Layer 6|
-|Cookie stuffing||Layer 6|
-|Memcache||Layer 6|
+|HTTP flood||Layer 7|
+|Cookie stuffing||Layer 7|
+|Memcache||Layer 7|
 
 # Lemonsqueezy
 new ddos attack method!
