@@ -112,7 +112,7 @@ Coming soon!
 4. you are not allowed to sell this product to anyone.
 5. you are not allowed to copy this product's name.
 6. you're repsonsible for your actions using this tool keep that in mind the author of this repository is not responsible for any damages using this tool.
-7. if you have any questions
+7. if you have any questions or issues or even ideas dm me in discord!
    
 > [!WARNING]
 > This repositpry's Author is not resposible for what you're about to do with this script, This script made for Educational purposes only!
