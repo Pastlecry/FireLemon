@@ -37,7 +37,6 @@ This new tool powered by Python's most powerful Frameworks such as:
 + Layer 3
 + Layer 4
 + Layer 5
-+ Layer 6
 + Layer 7
   
 # installation
@@ -76,8 +75,8 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |------------|---------------------------------------------------------|-------|
 |layer 3     |ARP, BGP, ICMP|  |                                    
 |layer 4     |TCP, UDP, SMP|   |                                
-|layer 5     |            |    |                                        
-|layer 6     |           |     |                                     
+|layer 5     |            |    |                                         
+
 |layer 7     |HTTP, FTP, Memcache|   
 
 # Protocols
@@ -103,7 +102,7 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 Coming soon!
 
 # Terms of use and Responsiblities
-
+## Remeber with Great Power, Comes great Responsibility!
 > [!WARNING]
 > This repositpry's Author is not resposible for what you're about to do with this script, This script made for Educational purposes only!
 # License
