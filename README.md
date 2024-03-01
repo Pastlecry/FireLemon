@@ -98,7 +98,7 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |-------------|---------------------------------------------------------|--------|
 ||||
 
-# Lemonsqueezh
+# Lemonsqueezy
 new ddos attack method!
 
 # Anonymize Attacks
