@@ -102,7 +102,15 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 Coming soon!
 
 # Terms of use and Responsiblities
-### Remeber with Great Power, Comes great Responsibility!
+1. Remeber with Great Power, Comes great Responsibility.
+
+2. Don not attampt to attack Education, medical, Government websites and Infrastructure communications.
+3. please do not copy this product without mentioning the creator
+4. you are not allowed to sell this product to anyone.
+5. you are not allowed to copy this product's name.
+6. you're repsonsible for your actions using this tool keep that in mind the author of this repository is not responsible for any damages using this tool.
+7. if you have any questions
+   
 > [!WARNING]
 > This repositpry's Author is not resposible for what you're about to do with this script, This script made for Educational purposes only!
 # License
