@@ -1,0 +1,10 @@
+certifi==2024.2.2
+charset-normalizer==3.3.2
+colorama==0.4.6
+hashring==1.5.1
+idna==3.6
+memcache==0.12.0
+requests==2.31.0
+rgbprint==4.0.2
+scapy==2.5.0
+urllib3==2.2.1
