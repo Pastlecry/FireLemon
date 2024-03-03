@@ -48,6 +48,14 @@ after that we change our directory to cloned repository
 ```
 cd FireLemon
 ```
+alr now we install the required libraries using this command
+```
+pip install -r requirements.txt
+```
+or
+```
+python -m pip install -r requirements.txt
+```
 than we simply run ```main``` Python file to run FireLemon
 ```
 python main.py
