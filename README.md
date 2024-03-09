@@ -1,7 +1,6 @@
 [![License](https://img.shields.io/github/license/Pastlecry/FireLemon?style=for-the-badge&color=orange)](/LICENSE)
 ![Repo stars](https://img.shields.io/github/stars/Pastlecry/FireLemon?style=for-the-badge&color=orange)
 ![Version](https://img.shields.io/github/v/release/Pastlecry/FireLemon?display_name=tag&style=for-the-badge&color=orange)
-
 <br/>
 <p align="center">
   <h3 align="center">FireLemon🍋</h3>
