@@ -4,7 +4,7 @@
 
 <br/>
 <p align="center">
-  <h3 align="center">FireLemon</h3>
+  <h3 align="center">FireLemon🍋</h3>
 
   <p align="center">
     Advanced DDoS Attack Tool
@@ -22,7 +22,7 @@ FireLemon is an Advanced DDoS Tool Powered by Python's most Powerful Frameworks 
   <img src="/images/image2.png" alt="FireLemon Logo" class="center">
 </p>
 
-FireLemon is meant to be [Lemonade](https://github.com/Pastlecry/Lemonade-Tool) Version 2 but released as a new tool called FireLemon.
+FireLemon🍋 is meant to be [Lemonade](https://github.com/Pastlecry/Lemonade-Tool) Version 2 but released as a new tool called FireLemon.
 Why it's called FireLemon? Bcause it's FIRE! :fire:
 
 This new tool powered by Python's most powerful Frameworks such as:
@@ -84,7 +84,7 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |layer 5|            |    |                                         
 |layer 7|HTTP, FTP, Memcache||
 
-# Protocols
+# 🖇️Protocols
 
 |  Protocols  |                       Description                       |  Layer |
 |-------------|---------------------------------------------------------|--------|
@@ -97,7 +97,7 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |HTTP| | Layer 7|
 |FTP| | Layer 7|
 
-# Attack Methods
+# ⚔️Attack Methods
 
 |   Attacks   |                       Dscription                        |  Layer |
 |-------------|---------------------------------------------------------|--------|
@@ -114,13 +114,13 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |Cookie stuffing||Layer 7|
 |Memcache||Layer 7|
 
-# Lemonsqueezy
+# 🍋Lemonsqueezy
 new ddos attack method!
 
-# Anonymize Attacks
+# 😶‍🌫️Anonymize Attacks
 Coming soon!
 
-# Terms of use and Responsiblities
+# 📜Terms of use and Responsiblities
 1. Remember with Great Power, Comes great Responsibility.
 
 2. Don not attampt to attack Education, medical, Government websites and Infrastructure communications.
