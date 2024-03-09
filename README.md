@@ -31,13 +31,13 @@ This new tool powered by Python's most powerful Frameworks such as:
 + [Requests](https://pypi.org/project/requests/)
 + [PySocks](https://pypi.org/project/PySocks/)
 
-## This DDoS Script supports:
+## ⚡This DDoS Script supports:
 + Layer 3
 + Layer 4
 + Layer 5
 + Layer 7
   
-# installation
+# 🔮installation
 first of all we're gonna clone this repository to our Machine
 ```
 git clone https://github.com/Pastlecry/FireLemon
@@ -63,7 +63,7 @@ or
 python3 main.py
 ```
 
-# Usage
+# 🕹️Usage
 you can run below commands in program Terminal:
 |  Commands  |                         Usage                           |
 |------------|---------------------------------------------------------|
@@ -73,7 +73,7 @@ you can run below commands in program Terminal:
 |debug       |Turning Debig mode ON and OFF(in Beta Stage right now!)|
 |exit        |Exits the program|
 
-# Layers
+# 🖇️Layers
 
 With running **attack** command in program Terminal you can Select 5 layers of attacks with their own functions:
 
