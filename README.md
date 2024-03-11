@@ -134,4 +134,5 @@ Coming soon!
 # ⚖️License
 all files are Licensed under [MIT](/LICENSE) License 
 
-# Powered by [Tengu]
+# ⚒️Powered by [Tengu](https://github.com/Pastlecry/Tengu)
+still in development👀
