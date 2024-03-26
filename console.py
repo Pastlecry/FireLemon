@@ -239,16 +239,7 @@ def attack():
                     layer_selection(option)
                     layer(option)
 
-
-
-if platform.system().lower() == "windows":
-   subprocess.call("cls", shell=True)
-
-elif platform.system().lower() == "linux":
-    subprocess.call("clear", shell=True)
-
-else:
-    subprocess.call("clear", shell=True)
+print(chr(27) + "[2J")
     
 Banner().print_banner()
 handle_command()
