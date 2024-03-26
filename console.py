@@ -86,7 +86,7 @@ def handle_command():
 def option_selection(option):
     Logger(__file__)
 
-    postion = message.index(('class:pound',    '# '))
+    postion = message.index(('class:pound', '# '))
     message.insert(postion, (('class:rbracket', ')')))
     message.insert(postion, (('class:option', option)))
     message.insert(postion, (('class:lbracket', '(')))
