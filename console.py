@@ -13,7 +13,7 @@ import platform
 import time
 
 styles = {
-    '':          '#ff0066',
+    '':  '#ff0066',
     'name': '#Fffb00',
     'pound': '#2596be', 
     'lbracket': '#2596be',
@@ -25,7 +25,7 @@ style = Style.from_dict(styles)
 
 message = [
     ('class:name', 'FireLemon'),
-    ('class:pound',    '# '),
+    ('class:pound', '# '),
 ]
 
 # def now_playing():
@@ -39,7 +39,7 @@ def shell(*args, **kwargs):
     Logger(__file__)
     session = PromptSession()
 
-    option =  session.prompt(*args, **kwargs, complete_in_thread=True, auto_suggest=AutoSuggestFromHistory())#, bottom_toolbar=now_playing)
+    option =  session.prompt(*args, **kwargs, complete_in_thread=True, auto_suggest=AutoSuggestFromHistory())
 
     return option.strip()
 
