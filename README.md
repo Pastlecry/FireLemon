@@ -25,10 +25,14 @@ FireLemon🍋 is meant to be [Lemonade](https://github.com/Pastlecry/Lemonade-To
 Why it's called FireLemon? Bcause it's FIRE! :fire:
 
 This new tool powered by Python's most powerful Frameworks such as:
++ [Asyncio](https://docs.python.org/3/library/asyncio.html)
++ [Aiohttp](https://docs.aiohttp.org/en/stable/)
 + [Sockets](https://docs.python.org/3/library/socket.html)
 + [Scapy](https://scapy.net)
 + [Requests](https://pypi.org/project/requests/)
 + [PySocks](https://pypi.org/project/PySocks/)
++ [Prompt toolkit](https://python-prompt-toolkit.readthedocs.io/en/master/)
++ [RGBPRINT](https://pypi.org/project/rgbprint/)
 
 ## ⚡This DDoS Script supports:
 + Layer 3
