@@ -10,7 +10,7 @@ from logger import Logger
 from debug import Debug
 
 styles = {
-    '':          '#ff0066',
+    '': '#ff0066',
     'url': '#Fffb00', 
     'threads_num': '#Fffb00',
     'sleep_time': '#Fffb00',
