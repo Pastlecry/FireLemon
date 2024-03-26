@@ -1,535 +1,254 @@
-from scripts.layer_3.LemonSqueezy import LemonSqueezy
-from scripts.layer_3.ping_of_death import PingOfDeath
-from scripts.layer_4.syn_flood import SynFlood
-from scripts.layer_4.tcp_flood import TCP
-from scripts.layer_4.udp_flood import UDP
-# from scripts.layer_4.Smurf import Smurf
-# from scripts.layer_4.smnp_flood import SmnpFlood
-from scripts.layer_4.minecraft import Minecraft
-from scripts.layer_7.http_flood import HttpAttack
-from scripts.layer_7.memcache import MemCache
-# from scripts.layer_7.cookie_stuffing import CookieStuffing
-# from scripts.layer_7.teardrop import Teardrop
-import shutil
-from rgbprint import gradient_print, Color, gradient_scroll, gradient_change
-from main import FireLemon
+from prompt_toolkit import PromptSession
+from prompt_toolkit.completion import NestedCompleter
+from prompt_toolkit.history import InMemoryHistory
+from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
+from prompt_toolkit.styles import Style
+from prompt_toolkit.formatted_text import HTML
 from debug import Debug
-from colorama import *
+from logger import Logger
+from handle_attacks import HandleAttacks
+from banner import Banner
+import subprocess
 import platform
-import os
+import time
 
-columns = shutil.get_terminal_size().columns
+styles = {
+    '':          '#ff0066',
+    'name': '#Fffb00',
+    'pound': '#2596be', 
+    'lbracket': '#2596be',
+    'rbracket': '#2596be', 
+    'option': '#Ff00fd',
+    'method': '#Ff00fd',
+}
+style = Style.from_dict(styles)
 
-NOTE = Fore.BLUE + "[NOTE] " + Fore.WHITE
-INFO = Fore.MAGENTA + "[INFO] " + Fore.WHITE
-WARN = Fore.YELLOW + "[WARN] " + Fore.WHITE
-ERROR = Fore.RED + "[ERROR] " + Fore.WHITE
+message = [
+    ('class:name', 'FireLemon'),
+    ('class:pound',    '# '),
+]
 
-banner = """
+# def now_playing():
+    
+#     return HTML(f'now playing: <b><style bg=>Toolbar</style></b>!')
+def right_prompt(text):
+    Logger(__file__)
+    return text
 
-   ▄████████  ▄█     ▄████████    ▄████████  ▄█          ▄████████   ▄▄▄▄███▄▄▄▄    ▄██████▄  ███▄▄▄▄       
-  ███    ███ ███    ███    ███   ███    ███ ███         ███    ███ ▄██▀▀▀███▀▀▀██▄ ███    ███ ███▀▀▀██▄     
-  ███    █▀  ███▌   ███    ███   ███    █▀  ███         ███    █▀  ███   ███   ███ ███    ███ ███   ███     
- ▄███▄▄▄     ███▌  ▄███▄▄▄▄██▀  ▄███▄▄▄     ███        ▄███▄▄▄     ███   ███   ███ ███    ███ ███   ███     
-▀▀███▀▀▀     ███▌ ▀▀███▀▀▀▀▀   ▀▀███▀▀▀     ███       ▀▀███▀▀▀     ███   ███   ███ ███    ███ ███   ███     
-  ███        ███  ▀███████████   ███    █▄  ███         ███    █▄  ███   ███   ███ ███    ███ ███   ███     
-  ███        ███    ███    ███   ███    ███ ███▌    ▄   ███    ███ ███   ███   ███ ███    ███ ███   ███     
-  ███        █▀     ███    ███   ██████████ █████▄▄██   ██████████  ▀█   ███   █▀   ▀██████▀   ▀█   █▀      
-                    ███    ███              ▀                                                               
+def shell(*args, **kwargs):
+    Logger(__file__)
+    session = PromptSession()
 
-"""
+    option =  session.prompt(*args, **kwargs, complete_in_thread=True, auto_suggest=AutoSuggestFromHistory())#, bottom_toolbar=now_playing)
 
-Title = f"""
-            ╔══════════════════════════════════════════════════════════════════════════════╗
-                                                {FireLemon.__name__}
-                                        Advanced DDoS Attack Tool
-                                        Copyright 2024 Pastlecry
-                                                  {FireLemon.__verrsion__}
-            ╚══════════════════════════════════════════════════════════════════════════════╝
-"""
+    return option.strip()
 
-options = """
-            ╔══════════════════════════════════════════════════════════════════════════════╗
-            1. attacks                          4. debug(Unavailable)                  
-            2. options                          5. exit       
-            3. attack                
-            ╚══════════════════════════════════════════════════════════════════════════════╝
-"""
+def handle_command():
+    Logger(__file__)
 
-attacks = """
-            ╔══════════════════════════════════════════════════════════════════════════════╗
-            Layer 3:
-                1. IP flood(Unavailable) 
-                2. Lemonsqueezy / BGP      :: sending BGP packets
-                3. Ping of death           :: sending ICMP packets to server
+    completer = NestedCompleter.from_nested_dict({
+        'attack' : None,
+        'attacks' : None,
+        'options' : None,
+        'debug' : None,
+        'exit': None,
+    })
 
-            Layer 4:
-                1. Syn flood               :: sending syn packets
-                2. UDP flood               :: sending packets via UDP protocol
-                3. TCP flood               :: sending packets via TCP protocol        
-                4. Smurf(Unavailable)      :: sending ARP packets includeing src ip and dst ip to server
-                5. SMNP(Unavailable)       :: sending SMNP packets to server port
-                6. minecraft               :: DDoS minecraft server
-
-            Layer 5:
-                1. Slowloris(Unavailable)
-
-            Layer 7:
-                1. HTTP request flood      :: sending HTTP request to server
-                2. DNS flood(Unavailable)  :: sending packets to DNS server
-                3. Teardrop(Unavailable)                   
-                4. Reflection(Unavailable) 
-                5. Cookie stuffing(Unav..) :: sending cookies to server   
-                6. Memcache                :: exploiting server's memcache
-                7. VPN flood(Unavailable)  :: sending HTTP requests to vpn server
-            ╚══════════════════════════════════════════════════════════════════════════════╝
-"""
-
-liney = "══════════════════════════════════════════════════════"
-
-NOTE = Debug.NOTE()
-WARN = Debug.WARN()
-ERROR = Debug.ERROR()
-
-def Print(title):
-    gradient_print(
-        title,
-        start_color=Color.yellow,  
-        end_color=Color.orange, 
-    )
-
-def Print_scroll(title):
-    gradient_scroll(
-        title, 
-        start_color=Color.yellow,  
-        end_color=Color.orange, 
-    )
-
-def Print_input(title):
-    gradient_print(
-        title, 
-        start_color=Color.yellow,  
-        end_color=Color.orange, 
-    )
-    result = input("\r")
-    return result
-
-def Print_line():
-   gradient_print(
-        liney, 
-        start_color=Color.yellow,  
-        end_color=Color.orange, 
-    ) 
-
-# Print banner
-def Banner():
-    gradient_print(
-        banner.center(columns), 
-        start_color=Color.yellow,    
-        end_color=Color.orange, 
-    )
-
-# Print console
-def TITLE():
-    gradient_print(
-        Title.center(columns), 
-        start_color=Color.yellow,  
-        end_color=Color.orange,
-    )
-
-# Console 
-def Console():
     while True:
 
-        option = Print_input("Select an option: ")
+        option = shell(message, style = style, completer=completer)
 
-        if option == "options":
-            Print(options)
+        # print(f"\'{option}\'")
 
-        elif option == "attacks":
-            Print(attacks)
+        if option == "":
+            continue
 
-        elif option == "debug":
-            debug_s = Print_input("Enable debug mode: Y/n")
-            if debug_s == "Y" or debug_s == "y" or debug_s == "yes":
-                Print_scroll("Debug mode enabled!")
+        elif option == "attack":
+            # print("hi")
+            attack()
+
+        elif option == 'attacks':
+            Banner().attacks()
+
+        elif option == 'options':
+            Banner().options()
+
+        elif option == 'debug':
+            print("not debug")
+
+        elif option == 'exit':
+            exit(0)
+
+        else:
+            print("unknown option!")
+            continue
+
+def option_selection(option):
+    Logger(__file__)
+
+    postion = message.index(('class:pound',    '# '))
+    message.insert(postion, (('class:rbracket', ')')))
+    message.insert(postion, (('class:option', option)))
+    message.insert(postion, (('class:lbracket', '(')))
+
+def layer_selection(layer):
+    Logger(__file__)
+
+    postion = message.index(('class:option', attack.__name__))
+    message.insert(postion + 1, (('class:lbracket', '\\')))
+    message.insert(postion + 2, (('class:option', layer)))
+
+def method_selection(method, layer):
+    Logger(__file__)
+
+    postion = message.index(('class:option', layer))
+    message.insert(postion + 1, (('class:lbracket', '\\')))
+    message.insert(postion + 2, (('class:method', method)))
+
+def layer(layer):
+    Logger(__file__)
+
+    if layer == 'layer3':
+        completer = NestedCompleter.from_nested_dict({
+            'Lemonsqueezy' : None,
+            'ping of death' : None,
+        })
+
+        while True:
+
+            option = shell(message, style = style, completer=completer)
+
+            if option == "":
+
                 continue
-            elif debug_s == "N" or debug_s == "n" or debug_s == "no":
-                Print_scroll("Debug mode disabled!")
-                continue
-            else:
-                Print_scroll("not defined debug mode!")
-
-        elif option == "ATTACK" or option == "attack" or option == "5":
-
-            attack_layer = Print_input("Select an attack Layer(3/4/7): ")
-
-            if attack_layer == "3" or attack_layer == "layer 3" or attack_layer == "LAYER 3":
-
-                attack_mode = Print_input(f"Select an Layer {attack_layer} attack option: ")
-
-                if attack_mode == "ICMP" or attack_mode == "icmp" or attack_mode == "ping of death":
-
-                    Print_line()
-                    print(NOTE)
-                    Print_scroll("SYN flood attack method selected")
-
-                    url_ = Print_input("Enter the URL: ")
-                    if url_.startswith("http://") or url_.startswith("https://"):
-                        if ".gov" in url_ or ".gob" in url_ or ".edu" in url_:
-                            print(ERROR)
-                            Print_scroll("cannot use .gov or .gob or .edu in the URL!")
-                            exit()
-                        else:
-                            url = url_     
-                    else:
-                        print(ERROR)
-                        Print_scroll("not defined url!")
-                        Print_input("press any key to exit...")
-                        exit()
-                    threads = 50
-                    threads_ = Print_input("Enter the number of threads(Default: 50): ")
-                    if threads_ == "":
-                        threads = 50
-                    elif int(threads_) > 50 or int(threads_) < 50:
-                        threads = threads_
-                    else:
-                        threads = 50
-                    sleep_ = Print_input("Sleep time(Default: 0): ")
-                    if sleep_ == "":
-                        sleep = None
-                    else:
-                        sleep = int(sleep_)
-
-                    Print_scroll("URL: \r")
-                    print(Fore.WHITE + url)
-                    Print_scroll("Threads: \r")
-                    print(Fore.WHITE + str(threads))
-                    Print_scroll("Sleep time: \r")
-                    print(Fore.WHITE + str(sleep))
-                    Print_line()
-                    Print_input("\nPress Enter when you're ready!")
-                    PingOfDeath(url, sleep, int(threads)).attack()
-                    print("done!")
-                    exit()
-
-                elif attack_mode == "BGP" or attack_mode == "bgp" or attack_mode == "Lemonsqueezy":
-
-                    Print_line()
-                    print(NOTE)
-                    Print_scroll("LemonSqueezy attack method selected")
-
-                    url_ = Print_input("Enter the URL: ")
-                    if url_.startswith("http://") or url_.startswith("https://"):
-                        if ".gov" in url_ or ".gob" in url_ or ".edu" in url_:
-                            print(ERROR)
-                            Print_scroll("cannot use .gov or .gob or .edu in the URL!")
-                            exit()
-                        else:
-                            url = url_     
-                    else:
-                        print(ERROR)
-                        Print_scroll("not defined url!")
-                        Print_input("press any key to exit...")
-                        exit()
-                    threads = 50
-                    threads_ = Print_input("Enter the number of threads(Default: 50): ")
-                    if threads_ == "":
-                        threads = 50
-                    elif int(threads_) > 50 or int(threads_) < 50:
-                        threads = threads_
-                    else:
-                        threads = 50
-                    sleep_ = Print_input("Sleep time(Default: 0): ")
-                    if sleep_ == "":
-                        sleep = None
-                    else:
-                        sleep = int(sleep_)
-
-                    Print_scroll("URL: \r")
-                    print(Fore.WHITE + url)
-                    Print_scroll("Threads: \r")
-                    print(Fore.WHITE + str(threads))
-                    Print_scroll("Sleep time: \r")
-                    print(Fore.WHITE + str(sleep))
-                    Print_line()
-                    Print_input("\nPress Enter when you're ready!")
-                    LemonSqueezy(url, sleep, int(threads)).attack()
-                    print("done!")
-                    exit()
-
-            elif attack_layer == "4" or attack_layer == "layer 4" or attack_layer == "LAYER 4":
-
-                attack_mode = Print_input(f"Select an Layer {attack_layer} attack option: ")
-                
-                # TCP Flood Attack
-
-                if attack_mode == "SYN" or attack_mode == "syn" or attack_mode == "1":
-
-                    Print_line()
-                    print(NOTE)
-                    Print_scroll("SYN flood attack method selected")
-
-                    url_ = Print_input("Enter the URL: ")
-                    if url_.startswith("http://") or url_.startswith("https://"):
-                        if ".gov" in url_ or ".gob" in url_ or ".edu" in url_:
-                            print(ERROR)
-                            Print_scroll("cannot use .gov or .gob or .edu in the URL!")
-                            exit()
-                        else:
-                            url = url_     
-                    else:
-                        print(ERROR)
-                        Print_scroll("not defined url!")
-                        Print_input("press any key to exit...")
-                        exit()
-                    threads = 50
-                    threads_ = Print_input("Enter the number of threads(Default: 50): ")
-                    if threads_ == "":
-                        threads = 50
-                    elif int(threads_) > 50 or int(threads_) < 50:
-                        threads = threads_
-                    else:
-                        threads = 50
-                    sleep_ = Print_input("Sleep time(Default: 0): ")
-                    if sleep_ == "":
-                        sleep = None
-                    else:
-                        sleep = int(sleep_)
-
-                    Print_scroll("URL: \r")
-                    print(Fore.WHITE + url)
-                    Print_scroll("Threads: \r")
-                    print(Fore.WHITE + str(threads))
-                    Print_scroll("Sleep time: \r")
-                    print(Fore.WHITE + str(sleep))
-                    Print_line()
-                    Print_input("\nPress Enter when you're ready!")
-                    HttpAttack(url, sleep, int(threads)).attack()
-                    print("done!")
-                    exit()
-
-                # UDP Flood Attack
-                    
-                elif attack_mode == "UDP" or attack_mode == "udp" or attack_mode == "2":
-
-                    Print_line()
-                    print(NOTE)
-                    Print_scroll("UDP flood attack method selected")
-
-                    ip = Print_input("Enter the IP: ")
-                    port = int(input("Enter the port: "))
-                    threads = 50
-                    threads_ = Print_input("Enter the number of threads(Default: 50): ")
-                    if threads_ == "":
-                        threads = 50
-                    elif int(threads_) > 50 or int(threads_) < 50:
-                        threads = threads_
-                    else:
-                        threads = 50
-                    sleep_ = Print_input("Sleep time(Default: 0): ")
-                    if sleep_ == "":
-                        sleep = None
-                    else:
-                        sleep = int(sleep_)
-
-                    Print_scroll("IP: \r")
-                    print(Fore.WHITE + ip)
-                    Print_scroll("Port: \r")
-                    print(Fore.WHITE + port)
-                    Print_scroll("Threads: \r")
-                    print(Fore.WHITE + str(threads))
-                    Print_scroll("Sleep time: \r")
-                    print(Fore.WHITE + str(sleep))
-                    Print_line()
-                    Print_input("\nPress Enter when you're ready!")
-                    UDP(ip, int(port), sleep, threads).attack()
-                    print("done!")
-                    exit()
-
-                # TCP Flood Attack
-
-                elif attack_mode == "TCP" or attack_mode == "tcp" or attack_mode == "3":
-
-                    Print_line()
-                    print(NOTE)
-                    Print_scroll("TCP flood attack method selected")
-
-                    ip = Print_input("Enter the IP: ")
-                    port = int(input("Enter the port: "))
-                    threads = 50
-                    threads_ = Print_input("Enter the number of threads(Default: 50): ")
-                    if threads_ == "":
-                        threads = 50
-                    elif int(threads_) > 50 or int(threads_) < 50:
-                        threads = threads_
-                    else:
-                        threads = 50
-                    sleep_ = Print_input("Sleep time(Default: 0): ")
-                    if sleep_ == "":
-                        sleep = None
-                    else:
-                        sleep = int(sleep_)
-
-                    Print_scroll("IP: \r")
-                    print(Fore.WHITE + ip)
-                    Print_scroll("Port: \r")
-                    print(Fore.WHITE + port)
-                    Print_scroll("Threads: \r")
-                    print(Fore.WHITE + str(threads))
-                    Print_scroll("Sleep time: \r")
-                    print(Fore.WHITE + str(sleep))
-                    Print_line()
-                    Print_input("\nPress Enter when you're ready!")
-                    TCP(ip, int(port), sleep, threads).attack()
-                    print("done!")
-                    exit()
-
-                # DNS flood Attack
-
-                elif attack_mode == "minecraft" or attack_mode == "MINECRAFT" or attack_mode == "6":
-                    Print_line()
-                    print(NOTE)
-                    Print_scroll("TCP flood attack method selected")
-
-                    ip = Print_input("Enter the IP: ")
-                    threads = 50
-                    threads_ = Print_input("Enter the number of threads(Default: 50): ")
-                    if threads_ == "":
-                        threads = 50
-                    elif int(threads_) > 50 or int(threads_) < 50:
-                        threads = threads_
-                    else:
-                        threads = 50
-                    sleep_ = Print_input("Sleep time(Default: 0): ")
-                    if sleep_ == "":
-                        sleep = None
-                    else:
-                        sleep = int(sleep_)
-
-                    Print_scroll("IP: \r")
-                    print(Fore.WHITE + ip)
-                    Print_scroll("Port: \r")
-                    print(Fore.WHITE + port)
-                    Print_scroll("Threads: \r")
-                    print(Fore.WHITE + str(threads))
-                    Print_scroll("Sleep time: \r")
-                    print(Fore.WHITE + str(sleep))
-                    Print_line()
-                    Print_input("\nPress Enter when you're ready!")
-                    Minecraft(ip, sleep, threads)
-                    print("done!")
-                    exit()
-
-            elif attack_layer == "7" or attack_layer == "layer 7" or attack_layer == "LAYER 7":
-
-                attack_mode = Print_input(f"Select an Layer {attack_layer} attack option: ")
-
-                if attack_mode == "HTTP" or attack_mode == "http" or attack_mode == "http flood" or attack_mode == "HTTP FLOOD" or attack_mode == "5":
-
-                    Print_line()
-                    print(NOTE)
-                    Print_scroll("HTTP flood attack method selected")
-
-                    print(NOTE)
-                    Print("\rHTTP attack mode Selected")
-                    url_ = Print_input("Enter the URL: ")
-                    if url_.startswith("http://") or url_.startswith("https://"):
-                        url = url_     
-                    else:
-                        print(ERROR + "not defined url!")
-                        input("press any key to exit...")
-                        exit()
-                    threads = 50
-                    threads_ = Print_input("Enter the number of threads(Default: 50): ")
-                    if threads_ == "":
-                        threads = 50
-                    elif int(threads_) > 50 or int(threads_) < 50:
-                        threads = threads_
-                    else:
-                        threads = 50
-                    sleep_ = Print_input("Sleep time(Default: 0): ")
-                    if sleep_ == "":
-                        sleep = None
-                    else:
-                        sleep = int(sleep_)
-
-                    Print_scroll("URL: \r")
-                    print(Fore.WHITE + url)
-                    Print_scroll("Threads: \r")
-                    print(Fore.WHITE + str(threads))
-                    Print_scroll("Sleep time: \r")
-                    print(Fore.WHITE + str(sleep))
-                    Print_line()
-                    print(WARN + "\n")
-                    input(Fore.MAGENTA + "Press Enter when you're ready!")
-                    HttpAttack(url, int(threads), sleep).attack()
-                    print("done!")
-                    exit()
-
-                elif attack_mode == "memcache" or attack_mode == "MEMCACHE" or attack_mode == "6":
-
-                    Print_line()
-                    print(NOTE)
-                    Print_scroll("HTTP flood attack method selected")
-
-                    print(NOTE)
-                    Print("\rHTTP attack mode Selected")
-                    url_ = Print_input("Enter the URL: ")
-                    if url_.startswith("http://") or url_.startswith("https://"):
-                        url = url_     
-                    else:
-                        print(ERROR + "not defined url!")
-                        input("press any key to exit...")
-                        exit()
-                    threads = 50
-                    threads_ = Print_input("Enter the number of threads(Default: 50): ")
-                    if threads_ == "":
-                        threads = 50
-                    elif int(threads_) > 50 or int(threads_) < 50:
-                        threads = threads_
-                    else:
-                        threads = 50
-                    sleep_ = Print_input("Sleep time(Default: 0): ")
-                    if sleep_ == "":
-                        sleep = None
-                    else:
-                        sleep = int(sleep_)
-
-                    Print_scroll("URL: \r")
-                    print(Fore.WHITE + url)
-                    Print_scroll("Threads: \r")
-                    print(Fore.WHITE + str(threads))
-                    Print_scroll("Sleep time: \r")
-                    print(Fore.WHITE + str(sleep))
-                    Print_line()
-                    print(WARN + "\n")
-                    input(Fore.MAGENTA + "Press Enter when you're ready!")
-                    MemCache(url, int(threads), sleep).attack()
-                    print("done!")
-                    exit()
 
             else:
 
-                print(ERROR + "not defined attack layer!")
-                input("press any key to exit...")
-                exit()
+                method_selection(option, layer)
 
-            # HTTP Request Flood Attack
+    elif layer == 'layer4':
+        completer = NestedCompleter.from_nested_dict({
+            'syn flood' : None,
+            'tcp flood' : None,
+            'udp flood' : None,
+            'minecraft' : None,
+        }) 
 
-        elif option == "exit":
-            Print_scroll("Thanks for using " + FireLemon.__name__ + ":3")
-            exit()
+        while True:
+
+            option = shell(message, style = style, completer=completer)
+
+            if option == "":
+
+                continue
+
+            else:
+
+                method_selection(option, layer)
+
+    elif layer == 'layer5':
+        pass
+
+    elif layer == 'layer7':
+
+        completer = NestedCompleter.from_nested_dict({
+            'http flood' : None,
+            'memcache' : None,
+        })
+
+        while True:
+
+            option = shell(message, style = style, completer=completer)
+
+            if option == "":
+
+                continue
+
+            elif option == 'back':
+                break
+
+            else:
+
+                print(f"Type 'options to start the {option} attack. ('back to back!)")
+
+                completer = NestedCompleter.from_nested_dict({
+                    'options' : None,
+                    'back' : None,
+                })
+
+                method_selection(option, layer)
+                output = shell(message, style = style, completer=completer)
+
+                if output == 'options' or output == 'options'.upper():
+                    HandleAttacks(option)
+
+                if output == 'back':
+                    break
+
+def attack():
+    Logger(__file__)
+
+    layers = {
+        'layer3' : None,
+        'layer4' : None,
+        'layer5' : None,
+        'layer7': None,
+    }
+
+    methods = {
+        'Lemonsqueezy' : None,
+        'ping of death' : None,
+        'syn flood' : None,
+        'tcp flood' : None,
+        'udp flood' : None,
+        'minecraft' : None,
+        'http flood' : None,
+        'memcache' : None,
+    }
+
+    options = NestedCompleter.from_nested_dict({**layers, **methods})
+            
+    option_selection(attack.__name__)
+
+    while True:
+
+        option = shell(message, style = style, completer=options)
+
+        if option == "":
+
+            continue
+
+        elif option == "back":
+
+            break
+
+        else:
+
+            for key, value in methods.items():
+
+                if option in key:
+
+                    HandleAttacks(option)
+
+                    while True:
+                        
+                        time.sleep(1)
+
+                else:
+
+                    layer_selection(option)
+                    layer(option)
+
+
 
 if platform.system().lower() == "windows":
-    os.system("cls")
+   subprocess.call("cls", shell=True)
 
 elif platform.system().lower() == "linux":
-    os.system("clear")
+    subprocess.call("clear", shell=True)
 
 else:
-    os.system("clear")
-
-Banner()
-TITLE()
-Console()
+    subprocess.call("clear", shell=True)
+    
+Banner().print_banner()
+handle_command()
