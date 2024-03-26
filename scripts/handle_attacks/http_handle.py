@@ -163,7 +163,7 @@ def options(*args, **kwargs):
 
     session = PromptSession()
 
-    option =  session.prompt(*args, **kwargs, style=style, complete_in_thread=True, auto_suggest=AutoSuggestFromHistory())
+    option = session.prompt(*args, **kwargs, style=style, complete_in_thread=True, auto_suggest=AutoSuggestFromHistory())
 
     return option.strip()
 
