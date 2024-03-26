@@ -88,8 +88,8 @@ def center(text):
     lines = text.split("\n")
     f_text = """"""
     for line in lines:
-        l = f"{line.center(Terminal_size.columns)}"
-        f_text += l
+        line = f"{line.center(Terminal_size.columns)}"
+        f_text += line
         f_text += "\n"
     return f_text
 
