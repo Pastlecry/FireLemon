@@ -27,7 +27,7 @@ WARN = Fore.YELLOW + "[WARN] " + Fore.WHITE
 ERROR = Fore.RED + "[ERROR] " + Fore.WHITE
 
 styles = {
-    '':          '#ff0066',
+    '': '#ff0066',
     'url': '#Fffb00', 
     'threads_num': '#Fffb00',
     'sleep_time': '#Fffb00',
@@ -80,7 +80,7 @@ class HttpHandle:
 
             threads_num_input_message = [
                 ('class:threads_num', 'Enter number of threads'),
-                ('class:pound',    ': '),
+                ('class:pound', ': '),
             ]
 
             threads_num = options(threads_num_input_message, default='5')
@@ -93,7 +93,7 @@ class HttpHandle:
 
             sleep_time_input_message = [
                 ('class:sleep_time', 'specify sleep time'),
-                ('class:pound',    ': '),
+                ('class:pound', ': '),
             ]
 
             sleep_time_ = options(sleep_time_input_message, default='1')
