@@ -39,7 +39,7 @@ def shell(*args, **kwargs):
     Logger(__file__)
     session = PromptSession()
 
-    option =  session.prompt(*args, **kwargs, complete_in_thread=True, auto_suggest=AutoSuggestFromHistory())
+    option = session.prompt(*args, **kwargs, complete_in_thread=True, auto_suggest=AutoSuggestFromHistory())
 
     return option.strip()
 
