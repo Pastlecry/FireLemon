@@ -13,7 +13,7 @@ import platform
 import time
 
 styles = {
-    '':  '#ff0066',
+    '': '#ff0066',
     'name': '#Fffb00',
     'pound': '#2596be', 
     'lbracket': '#2596be',
