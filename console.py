@@ -8,9 +8,9 @@ from debug import Debug
 from logger import Logger
 from handle_attacks import HandleAttacks
 from banner import Banner
+import subprocess
 import platform
 import time
-import os
 
 styles = {
     '':          '#ff0066',
@@ -242,13 +242,13 @@ def attack():
 
 
 if platform.system().lower() == "windows":
-    os.system("cls")
+   subprocess.call("cls", shell=True)
 
 elif platform.system().lower() == "linux":
-    os.system("clear")
+    subprocess.call("clear", shell=True)
 
 else:
-    os.system("clear")
+    subprocess.call("clear", shell=True)
     
 Banner().print_banner()
 handle_command()
