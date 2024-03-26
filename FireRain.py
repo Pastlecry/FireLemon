@@ -17,14 +17,7 @@ import os
 
 init(autoreset=True)
 
-if platform.system().lower() == "windows":
-    os.system("cls")
-
-elif platform.system().lower() == "linux":
-    os.system("clear")
-
-else:
-    os.system("clear")
+print(chr(27) + "[2J")
 
 Banner().print_banner()
 
