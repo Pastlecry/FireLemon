@@ -165,7 +165,7 @@ Coming soon!
 5. you are not allowed to copy this product's name.
 6. you're repsonsible for your actions using this tool keep that in mind the author of this repository is not responsible for any damages using this tool.
 
-#### Please read full [Terms of use](/TermsOfUse) and Accept them before using this tool!
+#### Please read full [Terms of use](/TermsOfUse.md) and Accept them before using this tool!
    
 > [!WARNING]
 > This repositpry's Author is not resposible for what you're about to do with this script, This script made for Educational purposes only!
