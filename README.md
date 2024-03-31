@@ -34,7 +34,7 @@ This new tool powered by Python's most powerful Frameworks such as:
 + [Prompt toolkit](https://python-prompt-toolkit.readthedocs.io/en/master/)
 + [RGBPRINT](https://pypi.org/project/rgbprint/)
 
-## ⚡This DDoS Script supports:
+### ⚡This DDoS Script supports:
 + Layer 3
 + Layer 4
 + Layer 5
