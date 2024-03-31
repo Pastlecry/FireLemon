@@ -1,13 +1,13 @@
-from scripts.layer_3.LemonSqueezy import LemonSqueezy
-from scripts.layer_3.ping_of_death import PingOfDeath
-from scripts.layer_4.syn_flood import SynFlood
-from scripts.layer_4.tcp_flood import TCP
-from scripts.layer_4.udp_flood import UDP
-from scripts.layer_4.minecraft import Minecraft
-from scripts.layer_7.http_flood import HttpAttack
-from scripts.layer_7.memcache import MemCache
-from colorama import init, Fore, Back, Style
-from banner import Banner
+from core.scripts.layer_3.LemonSqueezy import LemonSqueezy
+from core.scripts.layer_3.ping_of_death import PingOfDeath
+from core.scripts.layer_4.syn_flood import SynFlood
+from core.scripts.layer_4.tcp_flood import TCP
+from core.scripts.layer_4.udp_flood import UDP
+from core.scripts.layer_4.minecraft import Minecraft
+from core.scripts.layer_7.http_flood import HttpAttack
+from core.scripts.layer_7.memcache import MemCache
+from colorama import init, Fore
+from core.banner import Banner
 import argparse
 import inspect
 import platform
@@ -17,7 +17,14 @@ import os
 
 init(autoreset=True)
 
-print(chr(27) + "[2J")
+if platform.system().lower() == "windows":
+    os.system("cls")
+
+elif platform.system().lower() == "linux":
+    os.system("clear")
+
+else:
+    os.system("clear")
 
 Banner().print_banner()
 
