@@ -7,14 +7,14 @@
 <p align="center">
   <h1 align="center">FireLemon🍋</h1>
   <p align="center">
-    Advanced DDoS Attack Tool
+    Advanced DoS Attack Tool
   </p>
   <p align="center">
     <img src="images/logo (1).png" alt="FireLemon Logo ">
   </p>
 </p>
 
-FireLemon is an Advanced DDoS Tool Powered by Python's most Powerful Frameworks such as Scapy, Requests, Socket and PySocks.
+FireLemon is an Advanced DoS Tool Powered by Python's most Powerful Frameworks such as Scapy, Requests, Socket and PySocks.
 
 <br/>
 <p align="center">
@@ -37,7 +37,6 @@ This new tool powered by Python's most powerful Frameworks such as:
 ### ⚡This DDoS Script supports:
 + Layer 3
 + Layer 4
-+ Layer 5
 + Layer 7
   
 # 🔮installation
@@ -116,8 +115,7 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |   Layers   |                       Protocols                         | Usage |
 |------------|---------------------------------------------------------|-------|
 |layer 3|ARP, BGP, ICMP|  |                                    
-|layer 4|TCP, UDP, SMP|   |                                
-|layer 5|            |    |                                         
+|layer 4|TCP, UDP, SMP|   |                                       
 |layer 7|HTTP, FTP, Memcache||
 
 # 🌐Protocols
@@ -149,9 +147,6 @@ With running **attack** command in program Terminal you can Select 5 layers of a
 |HTTP flood||Layer 7|
 |Cookie stuffing||Layer 7|
 |Memcache||Layer 7|
-
-# 🍋Lemonsqueezy
-new ddos attack method!
 
 # 😶‍🌫️Anonymize Attacks
 Coming soon!
