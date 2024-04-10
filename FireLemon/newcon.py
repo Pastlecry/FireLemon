@@ -83,8 +83,11 @@ def console():
     
     while True:
 
+        # completer = NestedCompleter.from_nested_dict(complete_words)
+
         try:
-            output = shell(message)
+
+            output = shell(message)#, completer=completer)
 
             if output and output[0] != "":
                 cmd = output[0]
@@ -109,12 +112,13 @@ def console():
 
                 if cmd == "use":
                     if len(args) == 1:
+                        # write_config({'command' : cmd}, "w")
                         module, module_path = use(args[0])
                         if module_path is not False:
                             message = [
                                 ('class:name', 'FireLemon'),
                                 ('class:lbracket', '('),
-                                ('class:option', args[0]),
+                                ('class:option', module_path),
                                 ('class:rbracket', ')'),
                                 ('class:pound', '# '), 
                             ]
