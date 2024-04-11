@@ -82,7 +82,6 @@ def console():
     
     while True:
         config = read_config()
-        
 
         try:
             output = shell(message)
