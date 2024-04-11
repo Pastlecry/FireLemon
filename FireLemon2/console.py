@@ -135,7 +135,7 @@ def console():
 
 
                 elif cmd == "run":
-                    if config['module'] != "":
+                    if module:
                         pass
 
                     else:
@@ -143,7 +143,7 @@ def console():
                         continue
 
                 elif cmd == "set":
-                    if config['module'] != "":
+                    if module:
                         if len(args) == 2:
                             if args[0] in options():
                                 pass
@@ -163,7 +163,8 @@ def console():
                     Banner().options()
 
                 elif cmd == "back":
-                    if config['module'] != "":
+                    if module:
+                        module = None
                         reset()
                         message = [
                             ('class:name', 'FireLemon'),
