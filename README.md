@@ -1,5 +1,5 @@
 `python FireLemon`
-```
+```bash
 FireLemon# use scripts/script
 FireLemon# options
 ```
