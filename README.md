@@ -7,7 +7,7 @@
 <p align="center">
   <h1 align="center">FireLemon🍋</h1>
   <p align="center">
-    Advanced DoS Attack Tool
+    Advanced DoS Exploiting Framework
   </p>
   <p align="center">
     <img src="images/logo (1).png" alt="FireLemon Logo ">
